@@ -5,6 +5,11 @@
 	display: inline-block;
 }
 
+#map-container img {
+	transition: opacity 1s ease;
+	-moz-transition: opacity 1s ease;
+}
+
 #map-thumbnail {
 	display: inline-block;
 	vertical-align: top;
