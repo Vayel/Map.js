@@ -1,0 +1,19 @@
+#map-container {
+	width: 500px;
+	height: 400px;
+	border: 1px solid #000;
+	display: inline-block;
+}
+
+#map-thumbnail {
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+	width: 250px;
+	border: 1px solid #000;
+}
+
+#map-thumbnail div {
+	position: relative;
+	background: rgba(255, 255, 255, 0.3);
+}
