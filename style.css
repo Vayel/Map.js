@@ -5,11 +5,6 @@
 	display: inline-block;
 }
 
-#map-container img {
-	transition: opacity 1s ease;
-	-moz-transition: opacity 1s ease;
-}
-
 #map-container a {
 	border: 1px solid #000;
 	background: rgba(255, 255, 255, 0.5);
@@ -24,6 +19,5 @@
 }
 
 #map-thumbnail div {
-	position: relative;
 	background: rgba(255, 255, 255, 0.3);
 }

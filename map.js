@@ -493,7 +493,8 @@ var Map = (function() {
 				Elements.thumbnail.div = data.thumbnail.div;
 				
 				var marker = document.createElement('div');
-			
+				marker.style.position = 'relative';
+				
 				Elements.thumbnail.div.appendChild(marker);
 				Elements.thumbnail.marker = marker;
 			
