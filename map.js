@@ -416,11 +416,8 @@ var Map = (function() {
 				img.style.zIndex = '1';
 				img.style.left = tile.left;
 				img.style.top = tile.top;
-				img.style.opacity = '0';
 				
 				Elements.container.map.appendChild(img);
-				
-				img.style.opacity = '1'; // TODO
 			}
 		};
 		

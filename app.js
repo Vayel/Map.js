@@ -11,22 +11,76 @@ Map.create({
 				width: 100,
 				height: 100,
 				images: [
-					['./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
-					'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png'],
-					['./img/patterns/10.png', './img/patterns/9.png', './img/patterns/8.png', './img/patterns/7.png', './img/patterns/6.png',
-					'./img/patterns/5.png', './img/patterns/4.png', './img/patterns/3.png', './img/patterns/2.png', './img/patterns/1.png'],
-					['./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
-					'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png'],
-					['./img/patterns/10.png', './img/patterns/9.png', './img/patterns/8.png', './img/patterns/7.png', './img/patterns/6.png',
-					'./img/patterns/5.png', './img/patterns/4.png', './img/patterns/3.png', './img/patterns/2.png', './img/patterns/1.png'],
-					['./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
-					'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png'],
-					['./img/patterns/10.png', './img/patterns/9.png', './img/patterns/8.png', './img/patterns/7.png', './img/patterns/6.png',
-					'./img/patterns/5.png', './img/patterns/4.png', './img/patterns/3.png', './img/patterns/2.png', './img/patterns/1.png'],
-					['./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
-					'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png'],
-					['./img/patterns/10.png', './img/patterns/9.png', './img/patterns/8.png', './img/patterns/7.png', './img/patterns/6.png',
-					'./img/patterns/5.png', './img/patterns/4.png', './img/patterns/3.png', './img/patterns/2.png', './img/patterns/1.png']
+					[
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png'
+					],
+					[
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+					],
+					[
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png'
+					],
+					[
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+					],
+					[
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png'
+					],
+					[
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+					],
+					[
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png'
+					],
+					[
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+					],
+					[
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png'
+					],
+					[
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+					],
+					[
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png'
+					],
+					[
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+					],
+					[
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png'
+					],
+					[
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+						'./img/patterns/1.png', './img/patterns/2.png', './img/patterns/3.png', './img/patterns/4.png', './img/patterns/5.png',
+						'./img/patterns/6.png', './img/patterns/7.png', './img/patterns/8.png', './img/patterns/9.png', './img/patterns/10.png',
+					]
 				]
 			}
 		}
