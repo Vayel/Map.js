@@ -1,9 +1,9 @@
 var Map = (function() {
 	var ErrorsMsg = {
 		container: 'The container must be an existing HTML element reference.',
-		container_dimensions: 'Please, specify image\'s width and height.',
 		container_tiles: 'Please, specify some tiles.',
-		image: 'You must specify a data-img attribute for the container.',
+		tiles_dimensions: 'Please specify the dimensions of the tiles.',
+		tiles_images: 'Please specify images for tiles.',
 		thumbnail_div: 'The thumbnail div must be an existing HTML element reference.',
 		thumbnail_src: 'Please, specify an image src for the thumbnail.'
 	};
@@ -122,8 +122,8 @@ var Map = (function() {
 				},
 				// Whole map dimensions
 				map: function(obj) {
-					Dimensions.container.map.width = obj.width;
-					Dimensions.container.map.height = obj.height;
+					Dimensions.container.map.width = Tiles.numHori * Tiles.width;
+					Dimensions.container.map.height = Tiles.numVerti * Tiles.height;
 				}
 			},
 			thumbnail: {
@@ -504,7 +504,7 @@ var Map = (function() {
 			}	
 			
 			Controller.Measure.dimensions.container.div();
-			Controller.Measure.dimensions.container.map(data.container.map);
+			Controller.Measure.dimensions.container.map();
 			Controller.Measure.maxMovements.map();
 			Controller.Measure.tilesPerContainer();
 			Controller.Events.container.add();
@@ -519,7 +519,16 @@ var Map = (function() {
 			
 			View.display();
 			
-			return 10;
+			return {
+				ready: Controller.ready
+			};
+		};
+		
+		Controller.ready = function(fn) {
+			fn({
+				addLink: View.addLink,
+				center: Controller.Move.center
+			});
 		};
 		
 		return Controller.init(data);
@@ -529,8 +538,11 @@ var Map = (function() {
 		function check() {
 			// Container
 			if(!data.container.div) throw new Error(ErrorsMsg.container);
-			if(!data.container.map.width || !data.container.map.height) throw new Error(ErrorsMsg.container_dimensions);
 			if(!data.container.map.tiles) throw new Error(ErrorsMsg.container_tiles);
+			else {
+				if(!data.container.map.tiles.width || !data.container.map.tiles.height) throw new Error(ErrorsMsg.tiles_dimensions);
+				if(!data.container.map.tiles.images) throw new Error(ErrorsMsg.tiles_images);
+			}
 			// Thumbnail
 			if(data.thumbnail) {
 				if(!data.thumbnail.div) throw new Error(ErrorsMsg.thumbnail_div);
