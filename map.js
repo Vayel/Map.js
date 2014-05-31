@@ -64,8 +64,6 @@ var Map = (function() {
 			thumbnail: { div: null, src: null, marker: null }
 		};
 	
-		var mousedown = false;
-	
 		var Positions = {
 			map: { left: 0, top: 0 },
 			marker: { left: 0, top: 0 },
@@ -98,6 +96,9 @@ var Map = (function() {
 		};
 		var VISIBLE_TILE = 1,
 			HIDDEN_TILE = 0;
+		
+		var checkingTiles = null,
+		  CHECK_TILES_TIME = 300; // ms
 		
 		var LEFT_ARROW_KEYCODE = 37,
 			RIGHT_ARROW_KEYCODE = 39,
@@ -171,7 +172,8 @@ var Map = (function() {
 				var mouseCoords = {
 					x: 0, y: 0,
 					beginning: { x: 0, y: 0 }
-				};
+				},
+				mousedown = false;
 				
 				// Mousedown
 				addEvent(Elements.container.div, 'mousedown', function(e) {
@@ -207,12 +209,10 @@ var Map = (function() {
 				});
 				
 				// End of movement
-				function end() {
-					mousedown = false;
-					Elements.container.div.style.cursor = 'default';
-				}
-				addEvent(Elements.container.div, 'mouseout', end);
-				addEvent(Elements.container.div, 'mouseup', end);
+				addEvent(Elements.container.div, 'mouseup', function() {
+				  mousedown = false;
+				  Elements.container.div.style.cursor = 'default';
+				});
 			
 				// Keydown
 				addEvent(document.querySelector('body'), 'keypress', function(e) {
@@ -242,7 +242,8 @@ var Map = (function() {
 				var mouseCoords = {
 					x: 0, y: 0,
 					beginning: { x: 0, y: 0 }
-				};
+				},
+				mousedown = false;
 			
 				// Mousedown
 				addEvent(Elements.thumbnail.div, 'mousedown', function(e) {
@@ -294,7 +295,17 @@ var Map = (function() {
 				});
 			}		
 		};
-	
+	  
+	  Controller.checkTiles = function() {
+	    if(!checkingTiles) {
+	      checkingTiles = true;
+	      setTimeout(function() {
+	        checkingTiles = false;
+	        View.Tiles.show(Controller.Move.check.tiles());
+	      }, CHECK_TILES_TIME);
+	    }
+	  };
+	  
 		Controller.Move = {};
 		Controller.Move.check = {
 			position: function() {
@@ -345,8 +356,8 @@ var Map = (function() {
 				Positions.marker.top = -1 * Positions.map.top / Dimensions.heightFactor;
 			}
 			
+			Controller.checkTiles();
 			Controller.Move.check.position();
-			View.Tiles.show(Controller.Move.check.tiles());
 			View.move();
 		};
 		Controller.Move.fromMarker = function() {
@@ -354,8 +365,8 @@ var Map = (function() {
 			Positions.map.top = -1 * Positions.marker.top * Dimensions.heightFactor;	
 			Positions.map.left = -1 * Positions.marker.left * Dimensions.widthFactor;	
 			
+			Controller.checkTiles();
 			Controller.Move.check.position();
-			View.Tiles.show(Controller.Move.check.tiles());
 			View.move();
 		};
 		Controller.Move.goTo = function(x, y) {
@@ -372,8 +383,8 @@ var Map = (function() {
 				Positions.marker.top = -1 * Positions.map.top * Dimensions.thumbnail.div.height / Dimensions.container.map.height;
 			}
 			
+			Controller.checkTiles();
 			Controller.Move.check.position();
-			View.Tiles.show(Controller.Move.check.tiles());
 			View.move();
 		};
 		Controller.Move.center = function(left, top) {
@@ -416,8 +427,16 @@ var Map = (function() {
 				img.style.zIndex = '1';
 				img.style.left = tile.left;
 				img.style.top = tile.top;
+				img.style.opacity = '0';
 				
 				Elements.container.map.appendChild(img);
+				
+				(function(im) {
+				  // Make the element live in DOM to CSS transitions be applied
+				  setTimeout(function() { 
+				    im.style.opacity = '1';
+				  }, 10);
+				})(img);
 			}
 		};
 		
